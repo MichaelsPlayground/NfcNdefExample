@@ -53,7 +53,7 @@ My tip is: stay with one record only NDEF messages.
 ## What API is used for reading and writing ?
 
 This app is using the **NFC Reader API** and not the intent based usage. This is because that kind of writing is 
-more reliable and less faulty than all other connections. Just one restriction applies: the  app needs to open and in 
+more reliable and less faulty than all other connections. Just one restriction applies: the app needs to open and in 
 the foreground to work (for reading and writing).
 
 For that reason you need to very careful when the "write fragment" is active on the screen - data will be written 
@@ -64,8 +64,8 @@ tapped to the phone, sorry.
 
 ## Can I read and/or write protect my NDEF message ?
 
-The answers are "no" and "yes", meaning: you cannot (password) protect your NDEF message for any reading but you 
-can protect the data against any altering.
+The answers are "no" and "yes", meaning: **you cannot (password) reading protect your NDEF message but you 
+can protect the data against any altering (write protection).
 
 Icons: https://www.freeiconspng.com/images/nfc-icon
 
