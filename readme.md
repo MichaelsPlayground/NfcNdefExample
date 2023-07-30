@@ -18,7 +18,7 @@ available on their devices (except "Apple Pay" but this is a closed shop and ava
 A NDEF formatted tag (or better the file on it) should contain (ASCII-) text based data only as the typical reader
 (Android/iOS smartphone) won't view data.
 
-There are several "well known formatted" data and this sample is prepared to work with some of them:
+There are several "well known formatted" data and this sample is prepared to work with some of them (**writer side**):
 - the easiest type is the **Text** NDEF message that is shown on reading (e.g. a simple adress)
 - the most used type is the **URI (or URL)** type, meaning you can store a link to a website on it. When the 
 tag is read by the NDF reader the smartphone usually opens a browser and displays the  website
@@ -33,6 +33,22 @@ to the stored address
 - A rare used type is the **Application** type - this will force to open a specific app on the smartphone and - 
 when the app is not installed on the device it opens the app store (e.g. "Google Playstore") and tries to download 
 and install the app
+
+All of these types are supported by the app and you test all of them. On some types you can add a timestamp string 
+for easy testing.
+
+On the **reader side** yyou tap the  tag to the NFC reader and the message will pop up.
+
+THis app is using the **NFC Reader API** and not the intent based usage. This is because that kind of writing is 
+more reliable and less faulty than all other connections. Just one restriction applies: the  app needs to open and in 
+the foreground to work (for reading and writing).
+
+For that reason you need to very careful when the "write fragment" is active on the screen - data will be written 
+before any further conformation.
+
+A note on iOS compatibility: as I'm not owning an Apple phone I cannot test what will happen when a NDEF type is 
+tapped to the phone, sorry.  
+
 
 Icons: https://www.freeiconspng.com/images/nfc-icon
 
