@@ -26,15 +26,6 @@ public class Utils {
         }
     }
 
-    /**
-     * Sound files downloaded from Material Design Sounds
-     * https://m2.material.io/design/sound/sound-resources.html
-     */
-    public static void playSinglePing(Context context) {
-        MediaPlayer mp = MediaPlayer.create(context, R.raw.notification_decorative_02);
-        mp.start();
-    }
-
     public static String getTimestamp() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             return ZonedDateTime

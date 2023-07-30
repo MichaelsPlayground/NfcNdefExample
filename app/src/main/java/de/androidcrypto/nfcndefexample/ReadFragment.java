@@ -1,22 +1,15 @@
 package de.androidcrypto.nfcndefexample;
 
-import static android.content.Context.VIBRATOR_SERVICE;
-
 import static de.androidcrypto.nfcndefexample.Utils.doVibrate;
-import static de.androidcrypto.nfcndefexample.Utils.playSinglePing;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -169,7 +162,6 @@ public class ReadFragment extends Fragment implements NfcAdapter.ReaderCallback 
 
         }
         doVibrate(getActivity());
-        playSinglePing(getContext());
     }
 
     private void showWirelessSettings() {
