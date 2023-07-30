@@ -37,9 +37,22 @@ and install the app
 All of these types are supported by the app and you test all of them. On some types you can add a timestamp string 
 for easy testing.
 
-On the **reader side** yyou tap the  tag to the NFC reader and the message will pop up.
+On the **reader side** you tap the tag to the NFC reader and the message will pop up.
 
-THis app is using the **NFC Reader API** and not the intent based usage. This is because that kind of writing is 
+## Can I store more than one dataset on the NDEF tag ?
+
+Let's analyze how the data is stored on the tag. All data is encapsulated in a **NDEF record** (think of a 
+file in a directory). One or more of these records are stored in a **NDEF message** that is like a container. 
+This makes it possible to store different data withing the same NDEF message (e.g. you can use a "Telephone 
+number" record followed by an "address" record). The bad news are: only the first record will be shown when 
+not using any specialised app but the regular phone. If you are using a dedicated app for a special purpose 
+the user needs to install this app and opens it for reading.
+
+My tip is: stay with one record only NDEF messages.
+
+## What API is used for reading and writing ?
+
+This app is using the **NFC Reader API** and not the intent based usage. This is because that kind of writing is 
 more reliable and less faulty than all other connections. Just one restriction applies: the  app needs to open and in 
 the foreground to work (for reading and writing).
 
@@ -49,6 +62,10 @@ before any further conformation.
 A note on iOS compatibility: as I'm not owning an Apple phone I cannot test what will happen when a NDEF type is 
 tapped to the phone, sorry.  
 
+## Can I read and/or write protect my NDEF message ?
+
+The answers are "no" and "yes", meaning: you cannot (password) protect your NDEF message for any reading but you 
+can protect the data against any altering.
 
 Icons: https://www.freeiconspng.com/images/nfc-icon
 
