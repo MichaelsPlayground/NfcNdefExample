@@ -1,7 +1,7 @@
 # NFC NDEF example
 
 This is a sample app that shows how to read from and write to a NDEF formatted NFC tag. I tested it 
-NTAG216 tags and it works properly when using tags with factory settings.
+with NTAG216 tags and it works properly when using tags with factory settings.
 
 A NDEF formatted tag ("NFC Data Exchange Format") does need two separate files:
 1 a Container file (""CC") that is selected by a NFC reader that holds a link to the
