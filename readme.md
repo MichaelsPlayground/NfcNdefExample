@@ -7,10 +7,32 @@ A NDEF formatted tag ("NFC Data Exchange Format") does need two separate files:
 1 a Container file (""CC") that is selected by a NFC reader that holds a link to the
 2 data file where all data are stored.
 
+## Why should I use NDEF ?
 
+As NDEF is a standard you exchange data from the tag to an Android and iOS based smartphone. It sounds  
+a little bit unusual but Apple decided that NDEF data transfer is the only allowed data exchange format 
+available on their devices (except "Apple Pay" but this is a closed shop and available to Apple only).
 
+## What kind of data can be exchanged using NDEF ?
 
+A NDEF formatted tag (or better the file on it) should contain (ASCII-) text based data only as the typical reader
+(Android/iOS smartphone) won't view data.
 
+There are several "well known formatted" data and this sample is prepared to work with some of them:
+- the easiest type is the **Text** NDEF message that is shown on reading (e.g. a simple adress)
+- the most used type is the **URI (or URL)** type, meaning you can store a link to a website on it. When the 
+tag is read by the NDF reader the smartphone usually opens a browser and displays the  website
+- another popular type is the **Telefone number** type - here the smartphone will try to start a phone call
+- nowadays another popular type are the  **Coordinates** encoded on the tag. This is very similiar to a link to the 
+"Google Maps" website or similar but when using coordinates the smartphone tries to open an app that works with them like 
+Goople Maps (if installed on the  smartphone)
+- A special type is a **Streetview** coordinate - this will not show a map but a "street view image"
+- Using an **Address** type will open the contact app and try to save the new entry
+- Storing an **Email address** will force to open the standard email app on the smartphone and send an email 
+to the stored address
+- A rare used type is the **Application** type - this will force to open a specific app on the smartphone and - 
+when the app is not installed on the device it opens the app store (e.g. "Google Playstore") and tries to download 
+and install the app
 
 Icons: https://www.freeiconspng.com/images/nfc-icon
 
